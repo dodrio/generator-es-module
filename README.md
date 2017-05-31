@@ -8,7 +8,6 @@ Optionally with a [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
 $ npm install --global yo generator-nm
 ```
 
-
 ## Usage
 
 With [yo](https://github.com/yeoman/yo):

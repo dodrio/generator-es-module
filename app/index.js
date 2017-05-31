@@ -109,6 +109,13 @@ module.exports = class extends Generator {
         this.fs.copyTpl(this.templatePath('cli.js'), this.destinationPath('cli.js'), tpl)
       }
 
+      // import generator-license
+      this.composeWith(require.resolve('generator-license'), {
+        name: tpl.name,
+        email: tpl.email,
+        website: tpl.humanizedWebsite
+      })
+
       mv('editorconfig', '.editorconfig')
       mv('gitattributes', '.gitattributes')
       mv('gitignore', '.gitignore')

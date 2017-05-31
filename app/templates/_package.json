@@ -11,10 +11,10 @@
   },<% if (cli) { %>
   "bin": "cli.js",<% } %>
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "scripts": {
-    "test": "xo && <% if (nyc) { %>nyc <% } %>ava"
+    "test": "standard && <% if (nyc) { %>nyc <% } %>ava"
   },
   "files": [
     "index.js"<% if (cli) { %>,
@@ -26,13 +26,13 @@
     ""
   ],
   "dependencies": {<% if (cli) { %>
-    "meow": "^3.7.0"
+    "yargs": "^8.0.1"
   <% } %>},
   "devDependencies": {
     "ava": "^0.17.0",<% if (coveralls) { %>
     "coveralls": "^2.11.12",<% } %><% if (nyc) { %>
     "nyc": "^10.0.0",<% } %>
-    "xo": "^0.17.0"
+    "standard": "^10.0.2"
   }<% if (coveralls) { %>,
   "nyc": {
     "reporter": [

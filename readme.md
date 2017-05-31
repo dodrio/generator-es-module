@@ -1,13 +1,6 @@
-# generator-nm [![Build Status](https://travis-ci.org/sindresorhus/generator-nm.svg?branch=master)](https://travis-ci.org/sindresorhus/generator-nm)
-
-> Scaffold out a [node module](https://github.com/sindresorhus/node-module-boilerplate)
+# generator-nm [![Build Status](https://travis-ci.org/2players/generator-nm.svg?branch=master)](https://travis-ci.org/2players/generator-nm)
 
 Optionally with a [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
-
-This is what I use for [my own modules](https://www.npmjs.com/~sindresorhus).
-
-![](screenshot.png)
-
 
 ## Install
 
@@ -30,16 +23,16 @@ There are multiple command-line options available:
 $ yo nm --help
 
   Usage:
-    yo nm [options]
+	yo nm [options]
 
   Options:
-    --help          # Print the generator's options and usage
-    --skip-cache    # Do not remember prompt answers                      Default: false
-    --skip-install  # Do not automatically install dependencies           Default: false
-    --org           # Publish to a GitHub organization account
-    --cli           # Add a CLI
-    --coverage      # Add code coverage with nyc
-    --coveralls     # Upload coverage to coveralls.io (implies --coverage)
+	--help          # Print the generator's options and usage
+	--skip-cache    # Do not remember prompt answers                      Default: false
+	--skip-install  # Do not automatically install dependencies           Default: false
+	--org           # Publish to a GitHub organization account
+	--cli           # Add a CLI
+	--coverage      # Add code coverage with nyc
+	--coveralls     # Upload coverage to coveralls.io (implies --coverage)
 ```
 
 The `--org` option takes a string value (i.e. `--org=avajs`). All others are boolean flags and can be negated with the `no` prefix (i.e. `--no-coveralls`). You will be prompted for any options not passed on the command-line.
@@ -52,4 +45,4 @@ Use [chalk](https://github.com/sindresorhus/chalk) if you want colors in your CL
 
 ## License
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+MIT © [m31271n](https://index.m31271n.com)

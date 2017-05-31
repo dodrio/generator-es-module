@@ -3,17 +3,17 @@
   "version": "3.2.0",
   "description": "Scaffold out a node module",
   "license": "MIT",
-  "repository": "sindresorhus/generator-nm",
+  "repository": "2players/generator-nm",
   "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
+    "name": "m31271n",
+    "email": "m31271n@gmail.com",
+    "url": "index.m31271n.com"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "scripts": {
-    "test": "xo && ava"
+    "test": "standard && ava"
   },
   "files": [
     "app"
@@ -28,8 +28,7 @@
     "module",
     "node_module",
     "node-module",
-    "init",
-    "sindre"
+    "init"
   ],
   "dependencies": {
     "humanize-url": "^1.0.1",
@@ -42,13 +41,12 @@
   "devDependencies": {
     "ava": "*",
     "pify": "^2.2.0",
-    "xo": "*",
+    "standard": "^10.0.2",
     "yeoman-assert": "^2.0.0",
     "yeoman-test": "^1.0.0"
   },
-  "xo": {
-    "esnext": true,
-    "ignores": [
+  "standard": {
+    "ignore": [
       "app/templates/**"
     ]
   }

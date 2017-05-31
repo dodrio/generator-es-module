@@ -1,20 +1,13 @@
 #!/usr/bin/env node
-'use strict';
-const meow = require('meow');
-const <%= camelModuleName %> = require('.');
 
-const cli = meow(`
-	Usage
-	  $ <%= repoName %> [input]
+'use strict'
 
-	Options
-	  --foo  Lorem ipsum [Default: false]
+const yargs = require('yargs')
+const <%= camelModuleName %> = require('.')
 
-	Examples
-	  $ <%= repoName %>
-	  unicorns & rainbows
-	  $ <%= repoName %> ponies
-	  ponies & rainbows
-`);
+const argv = yargs
+      .usage('Usage: <%= repoName %> -w [word]')
+      .help('h')
+      .argv
 
-console.log(<%= camelModuleName %>(cli.input[0] || 'unicorns'));
+console.log(<%= camelModuleName %>(argv.w || 'unicorns'))

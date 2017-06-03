@@ -4,7 +4,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/2players/generator-nm/badge.svg?branch=master)](https://coveralls.io/github/2players/generator-nm?branch=master)
 [![Dependency Status](https://gemnasium.com/badges/github.com/2players/generator-nm.svg)](https://gemnasium.com/github.com/2players/generator-nm)
 
-
 Features:
 + Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
 + [JavaScript Standard Style](https://standardjs.com/)

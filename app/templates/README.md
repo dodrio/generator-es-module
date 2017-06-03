@@ -9,7 +9,7 @@
 ## Install
 
 ```
-$ npm install --save <%= moduleName %>
+$ npm install <%= moduleName %>
 ```
 
 ## Usage

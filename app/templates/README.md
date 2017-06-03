@@ -1,14 +1,16 @@
-# <%= repoName %> [![Build Status](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>.svg?branch=master)](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>)<% if (coveralls) { %> [![Coverage Status](https://coveralls.io/repos/github/<%= githubUsername %>/<%= repoName %>/badge.svg?branch=master)](https://coveralls.io/github/<%= githubUsername %>/<%= repoName %>?branch=master)<% } %>
+# <%= repoName %>
+
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://standardjs.com/)
+[![Build Status](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>.svg?branch=master)](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>)
+<% if (coveralls) { %> [![Coverage Status](https://coveralls.io/repos/github/<%= githubUsername %>/<%= repoName %>/badge.svg?branch=master)](https://coveralls.io/github/<%= githubUsername %>/<%= repoName %>?branch=master)<% } %>
 
 > <%= moduleDescription %>
-
 
 ## Install
 
 ```
 $ npm install --save <%= moduleName %>
 ```
-
 
 ## Usage
 
@@ -18,7 +20,6 @@ const <%= camelModuleName %> = require('<%= moduleName %>');
 <%= camelModuleName %>('unicorns');
 //=> 'unicorns & rainbows'
 ```
-
 
 ## API
 
@@ -38,7 +39,6 @@ Type: `boolean`<br>
 Default: `false`
 
 Lorem ipsum.<% if (cli) { %>
-
 
 ## CLI
 
@@ -61,7 +61,6 @@ $ <%= repoName %> --help
     $ <%= repoName %> ponies
     ponies & rainbows
 ```<% } %>
-
 
 ## License
 

@@ -6,7 +6,7 @@
 
 
 Features:
-+ Optianal [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
++ Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
 + [JavaScript Standard Style](https://standardjs.com/)
 
 ## Install

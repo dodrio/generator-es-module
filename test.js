@@ -29,9 +29,9 @@ test.serial('generates expected files', async () => {
     '.gitignore',
     '.travis.yml',
     'index.js',
-    'license',
     'package.json',
-    'readme.md',
+    'README.md',
+    'LICENSE',
     'test.js'
   ])
 
@@ -51,7 +51,7 @@ test.serial('CLI option', async () => {
   assert.file('cli.js')
   assert.fileContent('package.json', /"bin":/)
   assert.fileContent('package.json', /"bin": "cli.js"/)
-  assert.fileContent('package.json', /"meow"/)
+  assert.fileContent('package.json', /"yargs"/)
 })
 
 test.serial('nyc option', async () => {
@@ -69,7 +69,7 @@ test.serial('nyc option', async () => {
   assert.noFile('cli.js')
   assert.fileContent('.gitignore', /\.nyc_output/)
   assert.fileContent('.gitignore', /coverage/)
-  assert.fileContent('package.json', /"xo && nyc ava"/)
+  assert.fileContent('package.json', /"standard && nyc ava"/)
   assert.fileContent('package.json', /"nyc": "/)
   assert.noFileContent('package.json', /"coveralls":/)
   assert.noFileContent('package.json', /"lcov"/)
@@ -91,7 +91,7 @@ test.serial('coveralls option', async () => {
   assert.noFile('cli.js')
   assert.fileContent('.gitignore', /\.nyc_output/)
   assert.fileContent('.gitignore', /coverage/)
-  assert.fileContent('package.json', /"xo && nyc ava"/)
+  assert.fileContent('package.json', /"standard && nyc ava"/)
   assert.fileContent('package.json', /"nyc": "/)
   assert.fileContent('package.json', /"coveralls":/)
   assert.fileContent('package.json', /"lcov"/)
@@ -118,7 +118,7 @@ test.serial('prompts for description', async () => {
   await pify(generator.run.bind(generator))()
 
   assert.fileContent('package.json', /"description": "foo",/)
-  assert.fileContent('readme.md', /> foo/)
+  assert.fileContent('README.md', /> foo/)
 })
 
 test.serial('defaults to superb description', async () => {
@@ -134,5 +134,5 @@ test.serial('defaults to superb description', async () => {
   await pify(generator.run.bind(generator))()
 
   assert.fileContent('package.json', /"description": "My .+ module",/)
-  assert.fileContent('readme.md', /> My .+ module/)
+  assert.fileContent('README.md', /> My .+ module/)
 })

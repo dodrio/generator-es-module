@@ -113,7 +113,8 @@ module.exports = class extends Generator {
       this.composeWith(require.resolve('generator-license'), {
         name: tpl.name,
         email: tpl.email,
-        website: tpl.website
+        website: tpl.website,
+        defaultLicense: 'MIT'
       })
 
       mv('editorconfig', '.editorconfig')

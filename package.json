@@ -50,5 +50,8 @@
     "ignore": [
       "app/templates/**"
     ]
+  },
+  "ava": {
+    "failWithoutAssertions": false
   }
 }

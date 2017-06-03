@@ -62,6 +62,6 @@ $ <%= repoName %> --help
     ponies & rainbows
 ```<% } %>
 
-## License
+* * *
 
-MIT © [<%= name %>](<%= website %>)
+<p align="center">Made with ❤ by <a href="<%= website %>"><%= name %></a></p>

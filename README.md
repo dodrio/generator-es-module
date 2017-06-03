@@ -1,7 +1,7 @@
 # generator-nm
 
 [![Build Status](https://travis-ci.org/2players/generator-nm.svg?branch=master)](https://travis-ci.org/2players/generator-nm)
-[![Coverage Status](https://coveralls.io/repos/github/millette/generator-nm-standard/badge.svg?branch=master)](https://coveralls.io/github/millette/generator-nm-standard?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/2players/generator-nm/badge.svg?branch=master)](https://coveralls.io/github/2players/generator-nm?branch=master)
 [![Dependency Status](https://gemnasium.com/badges/github.com/2players/generator-nm.svg)](https://gemnasium.com/github.com/2players/generator-nm)
 
 

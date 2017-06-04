@@ -1,8 +1,10 @@
 # generator-nm
 
-[![Build Status](https://travis-ci.org/2players/generator-nm.svg?branch=master)](https://travis-ci.org/2players/generator-nm)
-[![Coverage Status](https://coveralls.io/repos/github/2players/generator-nm/badge.svg?branch=master)](https://coveralls.io/github/2players/generator-nm?branch=master)
-[![Dependency Status](https://gemnasium.com/badges/github.com/2players/generator-nm.svg)](https://gemnasium.com/github.com/2players/generator-nm)
+[![Travis Build Status](https://img.shields.io/travis/2players/generator-nm/master.svg)]()
+[![Coveralls branch](https://img.shields.io/coveralls/2players/generator-nm/master.svg)]()
+[![Dependency Status](https://img.shields.io/david/2players/generator-nm.svg)]()
+[![DevDependency Status](https://img.shields.io/david/2players/generator-nm.svg)]()
+[![NPM Downloads](https://img.shields.io/npm/dm/@2players/generator-nm.svg)]()
 
 Features:
 + Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface).

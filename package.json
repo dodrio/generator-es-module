@@ -1,6 +1,6 @@
 {
   "name": "@2players/generator-nm",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Scaffold out a node module",
   "license": "MIT",
   "repository": "2players/generator-nm",

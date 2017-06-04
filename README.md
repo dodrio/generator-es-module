@@ -1,9 +1,9 @@
 # generator-nm
 
-[![Travis Build Status](https://img.shields.io/travis/2players/generator-nm/master.svg)]()
-[![Dependency Status](https://img.shields.io/david/2players/generator-nm.svg)]()
-[![DevDependency Status](https://img.shields.io/david/2players/generator-nm.svg)]()
-[![NPM Downloads](https://img.shields.io/npm/dm/@2players/generator-nm.svg)]()
+[![Travis Build Status](https://img.shields.io/travis/2players/generator-nm/master.svg)](#)
+[![Dependency Status](https://img.shields.io/david/2players/generator-nm.svg)](#)
+[![DevDependency Status](https://img.shields.io/david/2players/generator-nm.svg)](#)
+[![NPM Downloads](https://img.shields.io/npm/dm/@2players/generator-nm.svg)](#)
 
 Features:
 + Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface).

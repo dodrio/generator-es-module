@@ -1,8 +1,11 @@
 # <%= repoName %>
 
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://standardjs.com/)
-[![Build Status](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>.svg?branch=master)](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>)
-<% if (coveralls) { %> [![Coverage Status](https://coveralls.io/repos/github/<%= githubUsername %>/<%= repoName %>/badge.svg?branch=master)](https://coveralls.io/github/<%= githubUsername %>/<%= repoName %>?branch=master)<% } %>
+[![Dependency Status](https://img.shields.io/david/<%= githubUsername %>/<%= repoName %>.svg)](#)
+[![DevDependency Status](https://img.shields.io/david/<%= githubUsername %>/<%= repoName %>.svg)](#)
+[![NPM Downloads](https://img.shields.io/npm/dm/<%= repoName %>.svg)](#)
+[![Travis Build Status](https://img.shields.io/travis/<%= githubUsername %>/<%= repoName %>.svg)](#)
+<% if (coveralls) { %>[![Coveralls branch](https://img.shields.io/coveralls/<%= githubUsername %>/<%= repoName %>.svg)](#)<% } %>
 
 > <%= moduleDescription %>
 

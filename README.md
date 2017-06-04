@@ -47,6 +47,6 @@ The `--org` option takes a string value (i.e. `--org=avajs`). All others are boo
 
 Use [chalk](https://github.com/sindresorhus/chalk) if you want colors in your CLI.
 
-## License
+* * *
 
-MIT © [m31271n](https://index.m31271n.com)
+<p align="center">Made with ❤ by <a href="https://2players.studio">2Players Studio</a></p>

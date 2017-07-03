@@ -29,11 +29,11 @@
     "yargs": "^8.0.1"
   <% } %>},
   "devDependencies": {
-    "ava": "^0.19.1",<% if (coveralls) { %>
-    "coveralls": "^2.11.12",<% } %><% if (nyc) { %>
+    "ava": "^0.19.1",<% if (codecov) { %>
+    "codecov": "^2.2.0",<% } %><% if (nyc) { %>
     "nyc": "^10.0.0",<% } %>
     "standard": "^10.0.2"
-  }<% if (coveralls) { %>,
+  }<% if (codecov) { %>,
   "nyc": {
     "reporter": [
       "lcov",

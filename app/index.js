@@ -121,6 +121,7 @@ module.exports = class extends Generator {
       mv('gitattributes', '.gitattributes')
       mv('gitignore', '.gitignore')
       mv('travis.yml', '.travis.yml')
+      mv('npmrc', '.npmrc')
       mv('_package.json', 'package.json')
     })
   }

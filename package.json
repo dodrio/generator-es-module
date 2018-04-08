@@ -13,11 +13,10 @@
     "node": ">=6"
   },
   "scripts": {
-    "test": "standard && ava"
+    "precommit": "lint-staged",
+    "test": "ava"
   },
-  "files": [
-    "app"
-  ],
+  "files": ["app"],
   "keywords": [
     "yeoman-generator",
     "plugin",
@@ -41,17 +40,20 @@
   },
   "devDependencies": {
     "ava": "*",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
     "pify": "^3.0.0",
-    "standard": "^10.0.2",
+    "prettier": "^1.11.1",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.0.0"
   },
   "standard": {
-    "ignore": [
-      "app/templates/**"
-    ]
+    "ignore": ["app/templates/**"]
   },
   "ava": {
     "failWithoutAssertions": false
+  },
+  "lint-staged": {
+    "*.{js,json,md}": ["prettier --write", "git add"]
   }
 }

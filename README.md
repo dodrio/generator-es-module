@@ -1,18 +1,20 @@
 # generator-nm
 
-[![Travis Build Status](https://img.shields.io/travis/2players/generator-nm/master.svg)](#)
-[![Dependency Status](https://img.shields.io/david/2players/generator-nm.svg)](#)
-[![DevDependency Status](https://img.shields.io/david/2players/generator-nm.svg)](#)
-[![NPM Downloads](https://img.shields.io/npm/dm/@2players/generator-nm.svg)](#)
+[![Dependency Status](https://img.shields.io/david/m31271n/generator-nm.svg)](#)
+[![DevDependency Status](https://img.shields.io/david/m31271n/generator-nm.svg)](#)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Travis Build Status](https://img.shields.io/travis/m31271n/generator-nm/master.svg)](#)
+[![NPM Downloads](https://img.shields.io/npm/dm/m31271n/generator-nm.svg)](#)
 
 Features:
-+ Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
-+ [JavaScript Standard Style](https://standardjs.com/)
+
+* Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
+* [JavaScript Standard Style](https://standardjs.com/)
 
 ## Install
 
 ```
-$ npm install -g yo @2players/generator-nm
+$ npm install -g yo generator-nm
 ```
 
 ## Usage
@@ -47,6 +49,6 @@ The `--org` option takes a string value (i.e. `--org=2players`). All others are 
 
 Use [chalk](https://github.com/sindresorhus/chalk) if you want colors in your CLI.
 
-* * *
+## License
 
-<p align="center">Made with ❤ by <a href="https://2players.studio">2Players Studio</a></p>
+[MIT](https://stack.m31271n.com/licenses/MIT.txt) © [m31271n](http://stack.m31271n.com)

@@ -1,6 +1,5 @@
 'use strict';
 
-const superb = require('superb');
 const normalizeUrl = require('normalize-url');
 const humanizeUrl = require('humanize-url');
 const Generator = require('yeoman-generator');
@@ -43,7 +42,7 @@ module.exports = class extends Generator {
       {
         name: 'moduleDescription',
         message: 'What is your module description?',
-        default: `My ${superb()} module`,
+        default: 'A fantastic module',
       },
       {
         name: 'githubUsername',

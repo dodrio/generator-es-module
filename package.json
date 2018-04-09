@@ -1,9 +1,9 @@
 {
-  "name": "@2players/generator-nm",
+  "name": "generator-nm",
   "version": "5.0.1",
   "description": "Scaffold out a node module",
   "license": "MIT",
-  "repository": "2players/generator-nm",
+  "repository": "m31271n/generator-nm",
   "author": {
     "name": "m31271n",
     "email": "m31271n@gmail.com",
@@ -52,7 +52,7 @@
   "lint-staged": {
     "ignore": ["app/templates/*"],
     "linters": {
-      "**/*.{js,json,md}": ["prettier --write", "git add"]
+      "**/*.{js,json,md}": ["prettier --write", "npm run test", "git add"]
     }
   }
 }

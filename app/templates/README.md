@@ -1,6 +1,6 @@
 # <%= repoName %>
 
-[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://standardjs.com/)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Dependency Status](https://img.shields.io/david/<%= githubUsername %>/<%= repoName %>.svg)](#)
 [![DevDependency Status](https://img.shields.io/david/<%= githubUsername %>/<%= repoName %>.svg)](#)
 [![NPM Downloads](https://img.shields.io/npm/dm/<%= repoName %>.svg)](#)
@@ -49,7 +49,7 @@ Lorem ipsum.<% if (cli) { %>
 $ npm install --global <%= moduleName %>
 ```
 
-```
+````
 $ <%= repoName %> --help
 
   Usage
@@ -68,3 +68,4 @@ $ <%= repoName %> --help
 * * *
 
 <p align="center">Made with ❤ by <a href="<%= website %>"><%= name %></a></p>
+````

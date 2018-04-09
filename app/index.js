@@ -42,7 +42,7 @@ module.exports = class extends Generator {
       {
         name: 'moduleDescription',
         message: 'What is your module description?',
-        default: 'A fantastic module.',
+        default: 'A mediocre module.',
       },
       {
         name: 'githubUsername',
@@ -140,6 +140,8 @@ module.exports = class extends Generator {
       mv('editorconfig', '.editorconfig');
       mv('gitattributes', '.gitattributes');
       mv('gitignore', '.gitignore');
+      mv('eslintrc.yml', '.eslintrc.yml');
+      mv('prettierrc.yml', '.prettierrc.yml');
       mv('travis.yml', '.travis.yml');
       mv('npmrc', '.npmrc');
       mv('_package.json', 'package.json');

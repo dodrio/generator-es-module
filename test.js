@@ -29,6 +29,8 @@ test.serial('generates expected files', async () => {
     '.git',
     '.gitattributes',
     '.gitignore',
+    '.eslintrc.yml',
+    '.prettierrc.yml',
     '.travis.yml',
     'index.js',
     'package.json',
@@ -72,7 +74,7 @@ test.serial('nyc option', async () => {
   assert.noFile('cli.js');
   assert.fileContent('.gitignore', /\.nyc_output/);
   assert.fileContent('.gitignore', /coverage/);
-  assert.fileContent('package.json', /"standard && nyc ava"/);
+  assert.fileContent('package.json', /"eslint && nyc ava"/);
   assert.fileContent('package.json', /"nyc": "/);
   assert.noFileContent('package.json', /"codecov":/);
   assert.noFileContent('package.json', /"lcov"/);
@@ -94,10 +96,10 @@ test.serial('codecov option', async () => {
   assert.noFile('cli.js');
   assert.fileContent('.gitignore', /\.nyc_output/);
   assert.fileContent('.gitignore', /coverage/);
-  assert.fileContent('package.json', /"standard && nyc ava"/);
+  assert.fileContent('package.json', /"eslint && nyc ava"/);
   assert.fileContent('package.json', /"nyc": "/);
   assert.fileContent('package.json', /"codecov":/);
-  assert.fileContent('package.json', /"lcov"/);
+  assert.fileContent('package.json', /"lcov"/g);
   assert.fileContent('.travis.yml', /codecov/);
 });
 
@@ -148,6 +150,6 @@ test.serial('defaults to superb description', async () => {
 
   await pify(generator.run.bind(generator))();
 
-  assert.fileContent('package.json', /"description": "A fantastic module.",/);
-  assert.fileContent('README.md', /> A fantastic module./);
+  assert.fileContent('package.json', /"description": "A mediocre module.",/);
+  assert.fileContent('README.md', /> A mediocre module./);
 });

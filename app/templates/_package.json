@@ -33,8 +33,9 @@
     "codecov": "^2.2.0",<% } %><% if (nyc) { %>
     "nyc": "^10.0.0",<% } %>
     "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
+    "eslint-config-prettier": "^2.9.0",
     "prettier": "^1.11.1"
   }<% if (codecov) { %>,
   "nyc": {

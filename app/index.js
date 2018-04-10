@@ -84,68 +84,72 @@ module.exports = class extends Generator {
           (x.nyc || this.options.coverage) &&
           this.options.codecov === undefined,
       },
-    ]).then(props => {
-      const or = (option, prop) =>
-        this.options[option] === undefined
-          ? props[prop || option]
-          : this.options[option];
+    ])
+      .then(props => {
+        const or = (option, prop) =>
+          this.options[option] === undefined
+            ? props[prop || option]
+            : this.options[option];
 
-      const cli = or('cli');
-      const codecov = or('codecov');
-      const nyc = codecov || or('coverage', 'nyc');
+        const cli = or('cli');
+        const codecov = or('codecov');
+        const nyc = codecov || or('coverage', 'nyc');
+        const repoName = utils.repoName(props.moduleName);
 
-      const repoName = utils.repoName(props.moduleName);
+        const tpl = {
+          moduleName: props.moduleName,
+          moduleDescription: props.moduleDescription,
+          camelModuleName: _s.camelize(repoName),
+          githubUsername: this.options.org || props.githubUsername,
+          repoName,
+          name: this.user.git.name(),
+          email: this.user.git.email(),
+          website: props.website,
+          humanizedWebsite: humanizeUrl(props.website),
+          cli,
+          nyc,
+          codecov,
+        };
+        return tpl;
+      })
+      .then(tpl => {
+        // import generator-license
+        this.composeWith(require.resolve('generator-license'), {
+          name: tpl.name,
+          email: tpl.email,
+          website: tpl.website,
+          defaultLicense: 'MIT',
+        });
+        return tpl;
+      })
+      .then(tpl => {
+        const mv = (from, to) => {
+          this.fs.move(this.destinationPath(from), this.destinationPath(to));
+        };
 
-      const tpl = {
-        moduleName: props.moduleName,
-        moduleDescription: props.moduleDescription,
-        camelModuleName: _s.camelize(repoName),
-        githubUsername: this.options.org || props.githubUsername,
-        repoName,
-        name: this.user.git.name(),
-        email: this.user.git.email(),
-        website: props.website,
-        humanizedWebsite: humanizeUrl(props.website),
-        cli,
-        nyc,
-        codecov,
-      };
-
-      const mv = (from, to) => {
-        this.fs.move(this.destinationPath(from), this.destinationPath(to));
-      };
-
-      this.fs.copyTpl(
-        [`${this.templatePath()}/**`, '!**/cli.js'],
-        this.destinationPath(),
-        tpl
-      );
-
-      if (cli) {
         this.fs.copyTpl(
-          this.templatePath('cli.js'),
-          this.destinationPath('cli.js'),
+          [`${this.templatePath()}/**`, '!**/cli.js'],
+          this.destinationPath(),
           tpl
         );
-      }
 
-      // import generator-license
-      this.composeWith(require.resolve('generator-license'), {
-        name: tpl.name,
-        email: tpl.email,
-        website: tpl.website,
-        defaultLicense: 'MIT',
+        if (tpl.cli) {
+          this.fs.copyTpl(
+            this.templatePath('cli.js'),
+            this.destinationPath('cli.js'),
+            tpl
+          );
+        }
+
+        mv('editorconfig', '.editorconfig');
+        mv('gitattributes', '.gitattributes');
+        mv('gitignore', '.gitignore');
+        mv('eslintrc.yml', '.eslintrc.yml');
+        mv('prettierrc.yml', '.prettierrc.yml');
+        mv('travis.yml', '.travis.yml');
+        mv('npmrc', '.npmrc');
+        mv('_package.json', 'package.json');
       });
-
-      mv('editorconfig', '.editorconfig');
-      mv('gitattributes', '.gitattributes');
-      mv('gitignore', '.gitignore');
-      mv('eslintrc.yml', '.eslintrc.yml');
-      mv('prettierrc.yml', '.prettierrc.yml');
-      mv('travis.yml', '.travis.yml');
-      mv('npmrc', '.npmrc');
-      mv('_package.json', 'package.json');
-    });
   }
 
   git() {

@@ -49,7 +49,7 @@ Lorem ipsum.<% if (cli) { %>
 $ npm install --global <%= moduleName %>
 ```
 
-````
+```
 $ <%= repoName %> --help
 
   Usage
@@ -64,8 +64,3 @@ $ <%= repoName %> --help
     $ <%= repoName %> ponies
     ponies & rainbows
 ```<% } %>
-
-* * *
-
-<p align="center">Made with ❤ by <a href="<%= website %>"><%= name %></a></p>
-````

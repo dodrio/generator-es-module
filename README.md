@@ -1,20 +1,20 @@
 # generator-nm
 
-[![Dependency Status](https://img.shields.io/david/m31271n/generator-nm.svg)](#)
-[![DevDependency Status](https://img.shields.io/david/m31271n/generator-nm.svg)](#)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Travis Build Status](https://img.shields.io/travis/m31271n/generator-nm/master.svg)](#)
-[![NPM Downloads](https://img.shields.io/npm/dm/m31271n/generator-nm.svg)](#)
+[![Dependency Status](https://img.shields.io/david/m31271n/generator-es-module.svg)](#)
+[![DevDependency Status](https://img.shields.io/david/m31271n/generator-es-module.svg)](#)
+[![Travis Build Status](https://img.shields.io/travis/m31271n/generator-es-module/master.svg)](#)
+[![NPM Downloads](https://img.shields.io/npm/dm/m31271n/generator-es-module.svg)](#)
 
 Features:
 
+* [Prettier](https://prettier.io/) code formatter
 * Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
-* [JavaScript Standard Style](https://standardjs.com/)
 
 ## Install
 
 ```
-$ npm install -g yo generator-nm
+$ npm install -g yo generator-es-module
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ $ npm install -g yo generator-nm
 With [yo](https://github.com/yeoman/yo):
 
 ```
-$ yo nm
+$ yo es-module
 ```
 
 There are multiple command-line options available:

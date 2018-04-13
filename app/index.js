@@ -135,8 +135,8 @@ module.exports = class extends Generator {
 
         if (tpl.cli) {
           this.fs.copyTpl(
-            this.templatePath('cli.js'),
-            this.destinationPath('cli.js'),
+            this.templatePath('src/cli.js'),
+            this.destinationPath('src/cli.js'),
             tpl
           );
         }
@@ -145,6 +145,7 @@ module.exports = class extends Generator {
         mv('gitattributes', '.gitattributes');
         mv('gitignore', '.gitignore');
         mv('eslintrc.yml', '.eslintrc.yml');
+        mv('eslintrc.test.yml', 'test/.eslintrc.yml');
         mv('prettierrc.yml', '.prettierrc.yml');
         mv('travis.yml', '.travis.yml');
         mv('npmrc', '.npmrc');

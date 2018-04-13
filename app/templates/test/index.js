@@ -1,5 +1,5 @@
 import test from 'ava';
-import fn from '.';
+import fn from '../src';
 
 test('title', t => {
   const err = t.throws(() => fn(123), TypeError);

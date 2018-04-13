@@ -10,7 +10,7 @@
     "url": "index.m31271n.com"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "scripts": {
     "precommit": "lint-staged",
@@ -50,9 +50,12 @@
     "failWithoutAssertions": false
   },
   "lint-staged": {
+    "concurrent": false,
     "ignore": ["app/templates/*"],
     "linters": {
-      "**/*.{js,json,md}": ["prettier --write", "npm run test", "git add"]
+      "**/*.{js,json,md}": ["prettier --write"],
+      "**/*.{js}": ["eslint"],
+      "**/*.{js}": ["git add"]
     }
   }
 }

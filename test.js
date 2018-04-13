@@ -32,15 +32,16 @@ test.serial('generates expected files', async () => {
     '.eslintrc.yml',
     '.prettierrc.yml',
     '.travis.yml',
-    'index.js',
+    'src/index.js',
+    'test/index.js',
+    'test/.eslintrc.yml',
     'package.json',
     'README.md',
     'LICENSE',
-    'test.js',
     '.npmrc',
   ]);
 
-  assert.noFile('cli.js');
+  assert.noFile('src/cli.js');
 });
 
 test.serial('CLI option', async () => {
@@ -53,9 +54,9 @@ test.serial('CLI option', async () => {
 
   await pify(generator.run.bind(generator))();
 
-  assert.file('cli.js');
+  assert.file('src/cli.js');
   assert.fileContent('package.json', /"bin":/);
-  assert.fileContent('package.json', /"bin": "cli.js"/);
+  assert.fileContent('package.json', /"bin": "src\/cli.js"/);
   assert.fileContent('package.json', /"yargs"/);
 });
 
@@ -71,10 +72,11 @@ test.serial('nyc option', async () => {
 
   await pify(generator.run.bind(generator))();
 
-  assert.noFile('cli.js');
+  assert.noFile('src/cli.js');
+  assert.fileContent('package.json', /"lint": "/);
   assert.fileContent('.gitignore', /\.nyc_output/);
   assert.fileContent('.gitignore', /coverage/);
-  assert.fileContent('package.json', /"eslint && nyc ava"/);
+  assert.fileContent('package.json', /"test": "/);
   assert.fileContent('package.json', /"nyc": "/);
   assert.noFileContent('package.json', /"codecov":/);
   assert.noFileContent('package.json', /"lcov"/);
@@ -94,9 +96,10 @@ test.serial('codecov option', async () => {
   await pify(generator.run.bind(generator))();
 
   assert.noFile('cli.js');
+  assert.fileContent('package.json', /"lint": "/);
   assert.fileContent('.gitignore', /\.nyc_output/);
   assert.fileContent('.gitignore', /coverage/);
-  assert.fileContent('package.json', /"eslint && nyc ava"/);
+  assert.fileContent('package.json', /"test": "/);
   assert.fileContent('package.json', /"nyc": "/);
   assert.fileContent('package.json', /"codecov":/);
   assert.fileContent('package.json', /"lcov"/g);

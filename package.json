@@ -51,7 +51,7 @@
   },
   "lint-staged": {
     "concurrent": false,
-    "ignore": ["app/templates/*"],
+    "ignore": ["app/templates/**/*"],
     "linters": {
       "**/*.{js,json,md}": ["prettier --write"],
       "**/*.{js}": ["eslint"],

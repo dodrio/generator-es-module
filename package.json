@@ -14,7 +14,9 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "test": "ava"
+    "lint": "eslint *.js **/*.js",
+    "test": "ava",
+    "code-quality": "npm run lint && npm run test"
   },
   "files": ["app"],
   "keywords": [
@@ -39,6 +41,11 @@
   },
   "devDependencies": {
     "ava": "*",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-ava": "^4.5.1",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
     "pify": "^3.0.0",
@@ -54,7 +61,6 @@
     "ignore": ["app/templates/**/*"],
     "linters": {
       "**/*.{js,json,md}": ["prettier --write"],
-      "**/*.{js}": ["eslint"],
       "**/*.{js}": ["git add"]
     }
   }

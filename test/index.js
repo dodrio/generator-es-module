@@ -3,13 +3,13 @@ import test from 'ava';
 import helpers from 'yeoman-test';
 import assert from 'yeoman-assert';
 import pify from 'pify';
-import utils from './app/utils';
+import utils from '../app/utils';
 
 let generator;
 
 test.beforeEach(async () => {
   await pify(helpers.testDirectory)(path.join(__dirname, 'temp'));
-  generator = helpers.createGenerator('nm:app', ['../app'], null, {
+  generator = helpers.createGenerator('nm:app', ['../../app'], null, {
     skipInstall: true,
   });
 });

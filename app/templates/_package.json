@@ -14,6 +14,7 @@
     "node": ">=8"
   },
   "scripts": {
+    "precommit": "lint-staged",
     "lint": "eslint **/*.js",
     "test": "<% if (nyc) { %>nyc <% } %>ava",
     "code-quality": "npm run lint && npm run test"
@@ -37,7 +38,16 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-config-prettier": "^2.9.0",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4"
+  },
+  "lint-staged": {
+    "concurrent": false,
+    "linters": {
+      "**/*.{js,json,md}": ["prettier --write"],
+      "**/*.js": ["eslint", "git add"]
+    }
   }<% if (codecov) { %>,
   "nyc": {
     "reporter": [

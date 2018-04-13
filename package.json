@@ -1,13 +1,13 @@
 {
-  "name": "generator-nm",
+  "name": "generator-es-module",
   "version": "5.0.1",
-  "description": "Scaffold out a node module",
+  "description": "Scaffold out a ECMAScript module.",
   "license": "MIT",
-  "repository": "m31271n/generator-nm",
+  "repository": "m31271n/generator-es-module",
   "author": {
     "name": "m31271n",
     "email": "m31271n@gmail.com",
-    "url": "index.m31271n.com"
+    "url": "stack.m31271n.com"
   },
   "engines": {
     "node": ">=8"

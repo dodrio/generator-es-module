@@ -28,10 +28,10 @@ $ yo es-module
 There are multiple command-line options available:
 
 ```
-$ yo nm --help
+$ yo es-module --help
 
 Usage:
-  yo nm [options]
+  yo es-module [options]
 
 Options:
   -h,   --help          # Print the generator's options and usage

@@ -14,7 +14,7 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "lint": "eslint *.js **/*.js",
+    "lint": "eslint '**/*.js'",
     "test": "ava",
     "code-quality": "npm run lint && npm run test"
   },
@@ -58,10 +58,10 @@
   },
   "lint-staged": {
     "concurrent": false,
-    "ignore": ["app/templates/**/*"],
+    "ignore": ["app/templates/**"],
     "linters": {
       "**/*.{js,json,md}": ["prettier --write"],
-      "**/*.{js}": ["git add"]
+      "**/*.js": ["eslint", "git add"]
     }
   }
 }

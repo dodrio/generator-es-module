@@ -18,9 +18,7 @@
     "test": "ava",
     "code-quality": "npm run lint && npm run test"
   },
-  "files": [
-    "app"
-  ],
+  "files": ["app"],
   "keywords": [
     "yeoman-generator",
     "plugin",
@@ -60,17 +58,10 @@
   },
   "lint-staged": {
     "concurrent": false,
-    "ignore": [
-      "app/templates/**"
-    ],
+    "ignore": ["app/templates/**"],
     "linters": {
-      "**/*.{js,json,md}": [
-        "prettier --write"
-      ],
-      "**/*.js": [
-        "eslint",
-        "git add"
-      ]
+      "**/*.{js,json,md}": ["prettier --write"],
+      "**/*.js": ["eslint", "git add"]
     }
   }
 }

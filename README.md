@@ -1,4 +1,4 @@
-# generator-nm
+# generator-es-module
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Dependency Status](https://img.shields.io/david/m31271n/generator-es-module.svg)](#)
@@ -9,7 +9,9 @@
 Features:
 
 * [Prettier](https://prettier.io/) code formatter
-* Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
+* Git pre commit hook
+* Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface)
+* Optional test coverage
 
 ## Install
 

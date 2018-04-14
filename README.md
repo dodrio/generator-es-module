@@ -4,7 +4,7 @@
 [![Dependency Status](https://img.shields.io/david/m31271n/generator-es-module.svg)](#)
 [![DevDependency Status](https://img.shields.io/david/m31271n/generator-es-module.svg)](#)
 [![Travis Build Status](https://img.shields.io/travis/m31271n/generator-es-module/master.svg)](#)
-[![NPM Downloads](https://img.shields.io/npm/dm/m31271n/generator-es-module.svg)](#)
+[![NPM Downloads](https://img.shields.io/npm/dm/generator-es-module.svg)](#)
 
 Features:
 
@@ -42,7 +42,7 @@ Options:
         --org           # Publish to a GitHub organization account
         --cli           # Add a CLI
         --coverage      # Add code coverage with nyc
-        --codecov     # Upload coverage to codecov.io (implies coverage)
+        --codecov       # Upload coverage to codecov.io (implies coverage)
 ```
 
 The `--org` option takes a string value (i.e. `--org=2players`). All others are boolean flags and can be negated with the `no` prefix (i.e. `--no-codecov`). You will be prompted for any options not passed on the command-line.

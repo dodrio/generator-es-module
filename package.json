@@ -57,7 +57,6 @@
     "failWithoutAssertions": false
   },
   "lint-staged": {
-    "concurrent": false,
     "ignore": ["app/templates/**"],
     "linters": {
       "**/*.{json,md}": ["prettier --write", "git add"],

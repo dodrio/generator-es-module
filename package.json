@@ -1,6 +1,6 @@
 {
   "name": "generator-es-module",
-  "version": "6.0.8",
+  "version": "6.0.9",
   "description": "Scaffold out an ECMAScript module.",
   "license": "MIT",
   "repository": "m31271n/generator-es-module",

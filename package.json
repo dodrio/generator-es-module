@@ -21,15 +21,17 @@
   "files": ["app"],
   "keywords": [
     "yeoman-generator",
-    "plugin",
     "boilerplate",
+    "init",
     "template",
     "scaffold",
+    "ECMAScript",
+    "ES",
+    "javascript",
     "node",
     "module",
     "node_module",
-    "node-module",
-    "init"
+    "node-module"
   ],
   "dependencies": {
     "generator-license": "^5.4.0",

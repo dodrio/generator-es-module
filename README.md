@@ -1,5 +1,7 @@
 # generator-es-module
 
+> Scaffold out a ECMAScript module.
+
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Dependency Status](https://img.shields.io/david/m31271n/generator-es-module.svg)](#)
 [![DevDependency Status](https://img.shields.io/david/m31271n/generator-es-module.svg)](#)

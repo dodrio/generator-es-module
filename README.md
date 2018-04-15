@@ -6,7 +6,7 @@
 [![Travis Build Status](https://img.shields.io/travis/m31271n/generator-es-module/master.svg)](#)
 [![NPM Downloads](https://img.shields.io/npm/dm/generator-es-module.svg)](#)
 
-> Scaffold out a ECMAScript module.
+> Scaffold out an ECMAScript module.
 
 Features:
 

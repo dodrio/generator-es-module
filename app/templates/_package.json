@@ -22,6 +22,7 @@
   "files": [
     "src/"
   ],
+  "main": "src/index.js",
   "keywords": [<% if (cli) { %>
     "cli",<% } %>
     ""

@@ -12,6 +12,7 @@ Features:
 
 * [Prettier](https://prettier.io/) code formatter
 * Git pre commit hook
+* Optional Web browser support (AKA [Babel](https://babeljs.io/) support)
 * Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface)
 * Optional test coverage
 
@@ -41,13 +42,15 @@ Options:
   -h,   --help          # Print the generator's options and usage
         --skip-cache    # Do not remember prompt answers                      Default: false
         --skip-install  # Do not automatically install dependencies           Default: false
+        --web-browser   # Add support for web browser
         --org           # Publish to a GitHub organization account
         --cli           # Add a CLI
         --coverage      # Add code coverage with nyc
         --codecov       # Upload coverage to codecov.io (implies coverage)
 ```
 
-The `--org` option takes a string value (i.e. `--org=2players`). All others are boolean flags and can be negated with the `no` prefix (i.e. `--no-codecov`). You will be prompted for any options not passed on the command-line.
+* The `--web-browser` option add babel related packages in order to support Web browser environments.
+* The `--org` option takes a string value (i.e. `--org=2players`). All others are boolean flags and can be negated with the `no` prefix (i.e. `--no-codecov`). You will be prompted for any options not passed on the command-line.
 
 ## Tip
 

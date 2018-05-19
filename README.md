@@ -12,7 +12,7 @@ Features:
 
 * [Prettier](https://prettier.io/) code formatter
 * Git pre commit hook
-* Optional Web browser support (AKA [Babel](https://babeljs.io/) support)
+* Optional Web browser support ([Babel](https://babeljs.io/) support)
 * Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface)
 * Optional test coverage
 

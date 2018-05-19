@@ -1,8 +1,19 @@
 ---
-root: true
+<% if (browser) { %>root: true
+env:
+  es6: true
+  browser: true
+  node: true
+parserOptions:
+  sourceType: module
+extends:
+  - eslint:recommended
+  - plugin:prettier/recommended
+<% } else { %>root: true
 plugins:
   - node
 extends:
   - eslint:recommended
   - plugin:node/recommended
   - plugin:prettier/recommended
+<% } %>

@@ -10,23 +10,28 @@ module.exports = class extends Generator {
   constructor(a, b) {
     super(a, b);
 
+    this.option('web-browser', {
+      type: Boolean,
+      desc: 'Add support for web browser',
+    });
+
     this.option('org', {
-      type: 'string',
+      type: String,
       desc: 'Publish to a GitHub organization account',
     });
 
     this.option('cli', {
-      type: 'boolean',
+      type: Boolean,
       desc: 'Add a CLI',
     });
 
     this.option('coverage', {
-      type: 'boolean',
+      type: Boolean,
       desc: 'Add code coverage with nyc',
     });
 
     this.option('codecov', {
-      type: 'boolean',
+      type: Boolean,
       desc: 'Upload coverage to codecov.io (implies coverage)',
     });
   }
@@ -60,6 +65,13 @@ module.exports = class extends Generator {
         filter: x => normalizeUrl(x),
       },
       {
+        name: 'web-browser',
+        message: 'Do you need support for web browser?',
+        type: 'confirm',
+        default: Boolean(this.options['web-browser']),
+        when: () => this.options['web-browser'] === undefined,
+      },
+      {
         name: 'cli',
         message: 'Do you need a CLI?',
         type: 'confirm',
@@ -91,6 +103,7 @@ module.exports = class extends Generator {
             ? props[prop || option]
             : this.options[option];
 
+        const browser = or('web-browser');
         const cli = or('cli');
         const codecov = or('codecov');
         const nyc = codecov || or('coverage', 'nyc');
@@ -106,6 +119,7 @@ module.exports = class extends Generator {
           email: this.user.git.email(),
           website: props.website,
           humanizedWebsite: humanizeUrl(props.website),
+          browser,
           cli,
           nyc,
           codecov,

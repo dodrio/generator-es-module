@@ -10,16 +10,6 @@ module.exports = class extends Generator {
   constructor(a, b) {
     super(a, b)
 
-    this.option('transpile', {
-      type: Boolean,
-      desc: 'Add support for transpile',
-    })
-
-    this.option('web-browser', {
-      type: Boolean,
-      desc: 'Add support for web browser',
-    })
-
     this.option('org', {
       type: String,
       desc: 'Publish to a GitHub organization account',
@@ -28,6 +18,16 @@ module.exports = class extends Generator {
     this.option('cli', {
       type: Boolean,
       desc: 'Add a CLI',
+    })
+
+    this.option('web-browser', {
+      type: Boolean,
+      desc: 'Add support for web browser',
+    })
+
+    this.option('transpile', {
+      type: Boolean,
+      desc: 'Add support for transpile',
     })
 
     this.option('coverage', {
@@ -70,12 +70,13 @@ module.exports = class extends Generator {
         filter: x => normalizeUrl(x),
       },
       {
-        name: 'transpile',
-        message: 'Do you need transpile code?',
+        name: 'cli',
+        message: 'Do you need a CLI?',
         type: 'confirm',
-        default: Boolean(this.options['transpile']),
-        when: () => this.options['transpile'] === undefined,
+        default: Boolean(this.options.cli),
+        when: () => this.options.cli === undefined,
       },
+
       {
         name: 'web-browser',
         message: 'Do you need support for web browser?',
@@ -84,11 +85,11 @@ module.exports = class extends Generator {
         when: () => this.options['web-browser'] === undefined,
       },
       {
-        name: 'cli',
-        message: 'Do you need a CLI?',
+        name: 'transpile',
+        message: 'Do you need transpile code?',
         type: 'confirm',
-        default: Boolean(this.options.cli),
-        when: () => this.options.cli === undefined,
+        default: Boolean(this.options['transpile']),
+        when: () => this.options['transpile'] === undefined,
       },
       {
         name: 'nyc',
@@ -115,9 +116,9 @@ module.exports = class extends Generator {
             ? props[prop || option]
             : this.options[option]
 
-        const transpile = or('transpile')
-        const browser = or('web-browser')
         const cli = or('cli')
+        const browser = or('web-browser')
+        const transpile = or('transpile')
         const codecov = or('codecov')
         const nyc = codecov || or('coverage', 'nyc')
         const repoName = utils.repoName(props.moduleName)

@@ -9,7 +9,7 @@
     "email": "<%= email %>",
     "url": "<%= humanizedWebsite %>"
   },<% if (cli) { %>
-  "bin": "src/cli.js",<% } %>
+  "bin": <% if (transpile) { %>"dist/cli.js"<% } else { %>"src/cli.js"<% } %>,<% } %>
   "engines": {
     "node": ">=8"
   },
@@ -23,7 +23,7 @@
       "npm run code-quality && npm run build && npm publish"<% } %>
   },
   "files": [
-    "src/"
+    <% if (transpile) { %>"dist/"<% } else { %>"src/"<% } %>
   ],
   "main": <% if (transpile) { %>"dist/index.js"<% } else { %>"src/index.js"<% } %>,
   "keywords": [<% if (cli) { %>
@@ -31,18 +31,18 @@
     ""
   ],
   "dependencies": {<% if (cli) { %>
-    "yargs": "^8.0.1"
+    "yargs": "^12.0.1"
   <% } %>},
   "devDependencies": {
-    "ava": "^0.19.1",<% if (transpile) { %>
-    "@babel/cli": "^7.0.0-beta.47",
-    "@babel/core": "^7.0.0-beta.47",
-    "@babel/preset-env": "^7.0.0-beta.47",<% } %><% if (codecov) { %>
-    "codecov": "^2.2.0",<% } %><% if (nyc) { %>
-    "nyc": "^10.0.0",<% } %>
-    "eslint": "^4.19.1",
-    "eslint-plugin-ava": "^4.5.1",
-    "eslint-plugin-node": "^6.0.1",
+    "ava": "^0.25.0",<% if (transpile) { %>
+    "@babel/cli": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",<% } %><% if (codecov) { %>
+    "codecov": "^3.0.4",<% } %><% if (nyc) { %>
+    "nyc": "^12.0.2",<% } %>
+    "eslint": "^5.2.0",
+    "eslint-plugin-ava": "^5.0.0",
+    "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-config-prettier": "^2.9.0",
     "prettier": "^1.11.1",

@@ -17,3 +17,5 @@ extends:
   - plugin:node/recommended
   - plugin:prettier/recommended
 <% } %>
+rules:
+  semi: off

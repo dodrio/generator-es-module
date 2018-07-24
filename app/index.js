@@ -1,39 +1,39 @@
-'use strict';
+'use strict'
 
-const normalizeUrl = require('normalize-url');
-const humanizeUrl = require('humanize-url');
-const Generator = require('yeoman-generator');
-const _s = require('underscore.string');
-const utils = require('./utils');
+const normalizeUrl = require('normalize-url')
+const humanizeUrl = require('humanize-url')
+const Generator = require('yeoman-generator')
+const _s = require('underscore.string')
+const utils = require('./utils')
 
 module.exports = class extends Generator {
   constructor(a, b) {
-    super(a, b);
+    super(a, b)
 
     this.option('web-browser', {
       type: Boolean,
       desc: 'Add support for web browser',
-    });
+    })
 
     this.option('org', {
       type: String,
       desc: 'Publish to a GitHub organization account',
-    });
+    })
 
     this.option('cli', {
       type: Boolean,
       desc: 'Add a CLI',
-    });
+    })
 
     this.option('coverage', {
       type: Boolean,
       desc: 'Add code coverage with nyc',
-    });
+    })
 
     this.option('codecov', {
       type: Boolean,
       desc: 'Upload coverage to codecov.io (implies coverage)',
-    });
+    })
   }
 
   init() {
@@ -101,13 +101,13 @@ module.exports = class extends Generator {
         const or = (option, prop) =>
           this.options[option] === undefined
             ? props[prop || option]
-            : this.options[option];
+            : this.options[option]
 
-        const browser = or('web-browser');
-        const cli = or('cli');
-        const codecov = or('codecov');
-        const nyc = codecov || or('coverage', 'nyc');
-        const repoName = utils.repoName(props.moduleName);
+        const browser = or('web-browser')
+        const cli = or('cli')
+        const codecov = or('codecov')
+        const nyc = codecov || or('coverage', 'nyc')
+        const repoName = utils.repoName(props.moduleName)
 
         const tpl = {
           moduleName: props.moduleName,
@@ -123,8 +123,8 @@ module.exports = class extends Generator {
           cli,
           nyc,
           codecov,
-        };
-        return tpl;
+        }
+        return tpl
       })
       .then(tpl => {
         // import generator-license
@@ -133,41 +133,41 @@ module.exports = class extends Generator {
           email: tpl.email,
           website: tpl.website,
           defaultLicense: 'MIT',
-        });
-        return tpl;
+        })
+        return tpl
       })
       .then(tpl => {
         const mv = (from, to) => {
-          this.fs.move(this.destinationPath(from), this.destinationPath(to));
-        };
+          this.fs.move(this.destinationPath(from), this.destinationPath(to))
+        }
 
         this.fs.copyTpl(
           [`${this.templatePath()}/**`, '!**/cli.js'],
           this.destinationPath(),
           tpl
-        );
+        )
 
         if (tpl.cli) {
           this.fs.copyTpl(
             this.templatePath('src/cli.js'),
             this.destinationPath('src/cli.js'),
             tpl
-          );
+          )
         }
 
-        mv('editorconfig', '.editorconfig');
-        mv('gitattributes', '.gitattributes');
-        mv('gitignore', '.gitignore');
-        mv('eslintrc.yml', '.eslintrc.yml');
-        mv('eslintrc.test.yml', 'test/.eslintrc.yml');
-        mv('prettierrc.yml', '.prettierrc.yml');
-        mv('travis.yml', '.travis.yml');
-        mv('npmrc', '.npmrc');
-        mv('_package.json', 'package.json');
-      });
+        mv('editorconfig', '.editorconfig')
+        mv('gitattributes', '.gitattributes')
+        mv('gitignore', '.gitignore')
+        mv('eslintrc.yml', '.eslintrc.yml')
+        mv('eslintrc.test.yml', 'test/.eslintrc.yml')
+        mv('prettierrc.yml', '.prettierrc.yml')
+        mv('travis.yml', '.travis.yml')
+        mv('npmrc', '.npmrc')
+        mv('_package.json', 'package.json')
+      })
   }
 
   git() {
-    this.spawnCommandSync('git', ['init']);
+    this.spawnCommandSync('git', ['init'])
   }
-};
+}

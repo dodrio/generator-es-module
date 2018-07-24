@@ -4,22 +4,23 @@
 [![Dependency Status](https://img.shields.io/david/m31271n/generator-es-module.svg)](#)
 [![DevDependency Status](https://img.shields.io/david/m31271n/generator-es-module.svg)](#)
 [![Travis Build Status](https://img.shields.io/travis/m31271n/generator-es-module/master.svg)](#)
-[![NPM Downloads](https://img.shields.io/npm/dm/generator-es-module.svg)](#)
+[![NPM Downloads](https://img.shields.io/npm/dm/@m31271n/generator-es-module.svg)](#)
 
 > Scaffold out an ECMAScript module.
 
 Features:
 
-* [Prettier](https://prettier.io/) code formatter
-* Git pre commit hook
-* Optional Web browser support ([Babel](https://babeljs.io/) support)
-* Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface)
-* Optional test coverage
+- Code style without semicolon
+- [Prettier](https://prettier.io/) code formatter
+- Git pre commit hook
+- Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface)
+- Optional transpile support via [Babel](https://babeljs.io/)
+- Optional test coverage
 
 ## Install
 
 ```
-$ npm install -g yo generator-es-module
+$ npm install -g yo @m31271n/generator-es-module
 ```
 
 ## Usage
@@ -27,30 +28,14 @@ $ npm install -g yo generator-es-module
 With [yo](https://github.com/yeoman/yo):
 
 ```
-$ yo es-module
+$ yo @m31271n/es-module
 ```
 
 There are multiple command-line options available:
 
 ```
-$ yo es-module --help
-
-Usage:
-  yo es-module [options]
-
-Options:
-  -h,   --help          # Print the generator's options and usage
-        --skip-cache    # Do not remember prompt answers                      Default: false
-        --skip-install  # Do not automatically install dependencies           Default: false
-        --web-browser   # Add support for web browser
-        --org           # Publish to a GitHub organization account
-        --cli           # Add a CLI
-        --coverage      # Add code coverage with nyc
-        --codecov       # Upload coverage to codecov.io (implies coverage)
+$ yo @m31271n/es-module --help
 ```
-
-* The `--web-browser` option add babel related packages in order to support Web browser environments.
-* The `--org` option takes a string value (i.e. `--org=2players`). All others are boolean flags and can be negated with the `no` prefix (i.e. `--no-codecov`). You will be prompted for any options not passed on the command-line.
 
 ## Tip
 

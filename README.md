@@ -41,6 +41,10 @@ $ yo @m31271n/es-module --help
 
 Use [chalk](https://github.com/sindresorhus/chalk) if you want colors in your CLI.
 
+## Related Packages
+
+- [@m31271n/generator-react-component](https://github.com/m31271n/generator-react-component)
+
 ## License
 
 [MIT](https://stack.m31271n.com/licenses/MIT.txt) © [m31271n](https://stack.m31271n.com)

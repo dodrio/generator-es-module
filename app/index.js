@@ -15,19 +15,9 @@ module.exports = class extends Generator {
       desc: 'Publish to a GitHub organization account',
     })
 
-    this.option('cli', {
-      type: Boolean,
-      desc: 'Add a CLI',
-    })
-
     this.option('web-browser', {
       type: Boolean,
       desc: 'Add support for web browser',
-    })
-
-    this.option('transpile', {
-      type: Boolean,
-      desc: 'Add support for transpile',
     })
 
     this.option('coverage', {
@@ -70,26 +60,11 @@ module.exports = class extends Generator {
         filter: x => normalizeUrl(x),
       },
       {
-        name: 'cli',
-        message: 'Do you need a CLI?',
-        type: 'confirm',
-        default: Boolean(this.options.cli),
-        when: () => this.options.cli === undefined,
-      },
-
-      {
         name: 'web-browser',
         message: 'Do you need support for web browser?',
         type: 'confirm',
         default: Boolean(this.options['web-browser']),
         when: () => this.options['web-browser'] === undefined,
-      },
-      {
-        name: 'transpile',
-        message: 'Do you need transpile code?',
-        type: 'confirm',
-        default: Boolean(this.options['transpile']),
-        when: () => this.options['transpile'] === undefined,
       },
       {
         name: 'nyc',
@@ -116,9 +91,7 @@ module.exports = class extends Generator {
             ? props[prop || option]
             : this.options[option]
 
-        const cli = or('cli')
         const browser = or('web-browser')
-        const transpile = or('transpile')
         const codecov = or('codecov')
         const nyc = codecov || or('coverage', 'nyc')
         const repoName = utils.repoName(props.moduleName)
@@ -133,9 +106,7 @@ module.exports = class extends Generator {
           email: this.user.git.email(),
           website: props.website,
           humanizedWebsite: humanizeUrl(props.website),
-          transpile,
           browser,
-          cli,
           nyc,
           codecov,
         }
@@ -157,18 +128,10 @@ module.exports = class extends Generator {
         }
 
         this.fs.copyTpl(
-          [`${this.templatePath()}/**`, '!**/cli.js'],
+          [`${this.templatePath()}/**`],
           this.destinationPath(),
           tpl
         )
-
-        if (tpl.cli) {
-          this.fs.copyTpl(
-            this.templatePath('src/cli.js'),
-            this.destinationPath('src/cli.js'),
-            tpl
-          )
-        }
 
         mv('editorconfig', '.editorconfig')
         mv('gitattributes', '.gitattributes')

@@ -19,7 +19,6 @@ test.serial('generates expected files', async () => {
     moduleName: 'test',
     githubUsername: 'test',
     website: 'test.com',
-    cli: false,
   })
 
   await pify(generator.run.bind(generator))()
@@ -40,24 +39,6 @@ test.serial('generates expected files', async () => {
     'LICENSE',
     '.npmrc',
   ])
-
-  assert.noFile('src/cli.js')
-})
-
-test.serial('CLI option', async () => {
-  helpers.mockPrompt(generator, {
-    moduleName: 'test',
-    githubUsername: 'test',
-    website: 'test.com',
-    cli: true,
-  })
-
-  await pify(generator.run.bind(generator))()
-
-  assert.file('src/cli.js')
-  assert.fileContent('package.json', /"bin":/)
-  assert.fileContent('package.json', /"bin": "src\/cli.js"/)
-  assert.fileContent('package.json', /"yargs"/)
 })
 
 test.serial('nyc option', async () => {
@@ -65,14 +46,12 @@ test.serial('nyc option', async () => {
     moduleName: 'test',
     githubUsername: 'test',
     website: 'test.com',
-    cli: false,
     nyc: true,
     codecov: false,
   })
 
   await pify(generator.run.bind(generator))()
 
-  assert.noFile('src/cli.js')
   assert.fileContent('package.json', /"lint": "/)
   assert.fileContent('.gitignore', /\.nyc_output/)
   assert.fileContent('.gitignore', /coverage/)
@@ -88,14 +67,12 @@ test.serial('codecov option', async () => {
     moduleName: 'test',
     githubUsername: 'test',
     website: 'test.com',
-    cli: false,
     nyc: true,
     codecov: true,
   })
 
   await pify(generator.run.bind(generator))()
 
-  assert.noFile('cli.js')
   assert.fileContent('package.json', /"lint": "/)
   assert.fileContent('.gitignore', /\.nyc_output/)
   assert.fileContent('.gitignore', /coverage/)
@@ -130,7 +107,6 @@ test.serial('prompts for description', async () => {
     moduleDescription: 'foo',
     githubUsername: 'test',
     website: 'test.com',
-    cli: false,
     nyc: true,
     codecov: true,
   })
@@ -146,7 +122,6 @@ test.serial('defaults to superb description', async () => {
     moduleName: 'test',
     githubUsername: 'test',
     website: 'test.com',
-    cli: false,
     nyc: true,
     codecov: true,
   })

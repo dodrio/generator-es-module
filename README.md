@@ -10,11 +10,9 @@
 
 Features:
 
-- Code style without semicolon
-- [Prettier](https://prettier.io/) code formatter
+- Browser target / Node target
+- [Prettier](https://prettier.io/) code formatter without semicolon
 - Git pre commit hook
-- Optional [CLI](http://en.wikipedia.org/wiki/Command-line_interface)
-- Optional transpile support via [Babel](https://babeljs.io/)
 - Optional test coverage
 
 ## Install

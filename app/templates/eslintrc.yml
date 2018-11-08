@@ -1,6 +1,8 @@
 ---
-root: true<% if (transpile) { %>
-parser: babel-eslint<% } %>
+root: true<% if (browser) { %>
+parser: babel-eslint<% } else { %>
+parserOptions:
+  sourceType: module<% } %>
 extends:
   - eslint:recommended
   - plugin:prettier/recommended<% if (!browser) { %>
@@ -10,4 +12,6 @@ env:
   browser: true<% } else { %>
   node: true<% } %>
 rules:
-  semi: off
+  semi: off<% if (!browser) { %>
+  # disable rules conflict with eslint-plugin-node
+  node/no-unsupported-features/es-syntax: off<% } %>

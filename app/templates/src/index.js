@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = (input, opts) => {
+function print(input, opts) {
   if (typeof input !== 'string') {
     throw new TypeError(`Expected a string, got ${typeof input}`)
   }
@@ -9,3 +9,5 @@ module.exports = (input, opts) => {
 
   return input + ' & ' + (opts.postfix || 'rainbows')
 }
+
+export default print

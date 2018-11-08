@@ -128,10 +128,39 @@ module.exports = class extends Generator {
         }
 
         this.fs.copyTpl(
-          [`${this.templatePath()}/**`],
+          [
+            `${this.templatePath()}/**`,
+            '!**/_register.js',
+            '!**/esm.js',
+            '!**/main.js',
+          ],
           this.destinationPath(),
           tpl
         )
+
+        if (tpl.browser) {
+          this.fs.copyTpl(
+            this.templatePath('src/main.js'),
+            this.destinationPath('src/index.js'),
+            tpl
+          )
+          this.fs.copyTpl(
+            this.templatePath('test/_register.js'),
+            this.destinationPath('test/_register.js'),
+            tpl
+          )
+        } else {
+          this.fs.copyTpl(
+            this.templatePath('src/esm.js'),
+            this.destinationPath('src/index.js'),
+            tpl
+          )
+          this.fs.copyTpl(
+            this.templatePath('src/main.js'),
+            this.destinationPath('src/main.js'),
+            tpl
+          )
+        }
 
         mv('editorconfig', '.editorconfig')
         mv('gitattributes', '.gitattributes')

@@ -44,7 +44,7 @@
     "yeoman-generator": "^3.0.0"
   },
   "devDependencies": {
-    "ava": "*",
+    "ava": "1.0.0-rc.1",
     "eslint": "^5.2.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-ava": "^5.0.0",

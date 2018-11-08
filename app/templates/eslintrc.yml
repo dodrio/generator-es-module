@@ -1,21 +1,13 @@
 ---
-<% if (browser) { %>root: true
+root: true<% if (transpile) { %>
+parser: babel-eslint<% } %>
+extends:
+  - eslint:recommended
+  - plugin:prettier/recommended<% if (!browser) { %>
+  - plugin:node/recommended<% } %>
 env:
-  es6: true
-  browser: true
-  node: true
-parserOptions:
-  sourceType: module
-extends:
-  - eslint:recommended
-  - plugin:prettier/recommended
-<% } else { %>root: true
-plugins:
-  - node
-extends:
-  - eslint:recommended
-  - plugin:node/recommended
-  - plugin:prettier/recommended
-<% } %>
+  es6: true<% if (browser) { %>
+  browser: true<% } else { %>
+  node: true<% } %>
 rules:
   semi: off

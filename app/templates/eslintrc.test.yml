@@ -5,4 +5,4 @@ extends:
   - plugin:ava/recommended
 rules:
   # disable rules conflict with eslint-plugin-node
-  node/no-unsupported-features: off
+  node/no-unsupported-features/es-syntax: off

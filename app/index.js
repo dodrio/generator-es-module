@@ -7,27 +7,27 @@ const _s = require('underscore.string')
 const utils = require('./utils')
 
 module.exports = class extends Generator {
-  constructor(a, b) {
-    super(a, b)
+  constructor(...args) {
+    super(...args)
 
     this.option('org', {
       type: String,
-      desc: 'Publish to a GitHub organization account',
+      description: 'Publish to a GitHub organization account',
     })
 
-    this.option('web-browser', {
+    this.option('transpile', {
       type: Boolean,
-      desc: 'Add support for web browser',
+      description: 'Enable transpile',
     })
 
     this.option('coverage', {
       type: Boolean,
-      desc: 'Add code coverage with nyc',
+      description: 'Add code coverage with nyc',
     })
 
     this.option('codecov', {
       type: Boolean,
-      desc: 'Upload coverage to codecov.io (implies coverage)',
+      description: 'Upload coverage to codecov.io (implies coverage)',
     })
   }
 
@@ -35,40 +35,40 @@ module.exports = class extends Generator {
     return this.prompt([
       {
         name: 'moduleName',
-        message: 'What do you want to name your module?',
+        message: 'Name:',
         default: _s.slugify(this.appname),
         filter: x => utils.slugifyPackageName(x),
       },
       {
         name: 'moduleDescription',
-        message: 'What is your module description?',
+        message: 'Description:',
         default: 'A mediocre module.',
       },
       {
         name: 'githubUsername',
-        message: 'What is your GitHub username?',
+        message: 'GitHub username:',
         store: true,
         validate: x => (x.length > 0 ? true : 'You have to provide a username'),
         when: () => !this.options.org,
       },
       {
         name: 'website',
-        message: 'What is the URL of your website?',
+        message: 'URL of your website:',
         store: true,
         validate: x =>
           x.length > 0 ? true : 'You have to provide a website URL',
         filter: x => normalizeUrl(x),
       },
       {
-        name: 'web-browser',
-        message: 'Do you need support for web browser?',
+        name: 'transpile',
+        message: 'Enable transpile?',
         type: 'confirm',
-        default: Boolean(this.options['web-browser']),
-        when: () => this.options['web-browser'] === undefined,
+        default: Boolean(this.options['transpile']),
+        when: () => this.options['transpile'] === undefined,
       },
       {
         name: 'nyc',
-        message: 'Do you need code coverage?',
+        message: 'Enable code coverage with nyc?',
         type: 'confirm',
         default: Boolean(this.options.codecov || this.options.coverage),
         when: () =>
@@ -91,7 +91,7 @@ module.exports = class extends Generator {
             ? props[prop || option]
             : this.options[option]
 
-        const browser = or('web-browser')
+        const transpile = or('transpile')
         const codecov = or('codecov')
         const nyc = codecov || or('coverage', 'nyc')
         const repoName = utils.repoName(props.moduleName)
@@ -106,7 +106,7 @@ module.exports = class extends Generator {
           email: this.user.git.email(),
           website: props.website,
           humanizedWebsite: humanizeUrl(props.website),
-          browser,
+          transpile,
           nyc,
           codecov,
         }
@@ -138,7 +138,7 @@ module.exports = class extends Generator {
           tpl
         )
 
-        if (tpl.browser) {
+        if (tpl.transpile) {
           this.fs.copyTpl(
             this.templatePath('src/main.js'),
             this.destinationPath('src/index.js'),

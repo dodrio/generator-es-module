@@ -1,17 +1,17 @@
 ---
-root: true<% if (browser) { %>
+root: true<% if (transpile) { %>
 parser: babel-eslint<% } else { %>
 parserOptions:
   sourceType: module<% } %>
 extends:
   - eslint:recommended
-  - plugin:prettier/recommended<% if (!browser) { %>
+  - plugin:prettier/recommended<% if (!transpile) { %>
   - plugin:node/recommended<% } %>
 env:
-  es6: true<% if (browser) { %>
+  es6: true<% if (transpile) { %>
   browser: true<% } else { %>
   node: true<% } %>
 rules:
-  semi: off<% if (!browser) { %>
+  semi: off<% if (!transpile) { %>
   # disable rules conflict with eslint-plugin-node
   node/no-unsupported-features/es-syntax: off<% } %>

@@ -10,9 +10,9 @@
 
 Features:
 
-- Browser target / Node target
 - [Prettier](https://prettier.io/) code formatter without semicolon
 - Git pre commit hook
+- Optional transpile with Babel
 - Optional test coverage
 
 ## Install

@@ -15,7 +15,8 @@
   "scripts": {
     "lint": "eslint '**/*.js'",
     "test": "ava",
-    "code-quality": "npm run lint && npm run test"
+    "code-quality": "npm run lint && npm run test",
+    "release": "npm run code-quality && npm publish"
   },
   "files": [
     "app"

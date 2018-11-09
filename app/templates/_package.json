@@ -64,11 +64,6 @@
       "**/*.{json,md}": ["prettier --write", "git add"],
       "**/*.js": ["eslint --fix", "git add"]
     }
-  }<% if (transpile) { %>,
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
   }<% } %><% if (codecov) { %>,
   "nyc": {
     "reporter": [

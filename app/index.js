@@ -133,6 +133,7 @@ module.exports = class extends Generator {
             '!**/_register.js',
             '!**/esm.js',
             '!**/main.js',
+            '!**/babel.config.js',
           ],
           this.destinationPath(),
           tpl
@@ -144,6 +145,13 @@ module.exports = class extends Generator {
             this.destinationPath('src/index.js'),
             tpl
           )
+
+          this.fs.copyTpl(
+            this.templatePath('babel.config.js'),
+            this.destinationPath('babel.config.js'),
+            tpl
+          )
+
           this.fs.copyTpl(
             this.templatePath('test/_register.js'),
             this.destinationPath('test/_register.js'),

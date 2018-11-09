@@ -1,6 +1,6 @@
 {
   "name": "@m31271n/generator-es-module",
-  "version": "7.0.1",
+  "version": "7.1.0",
   "description": "Scaffold out an ECMAScript module.",
   "license": "MIT",
   "repository": "m31271n/generator-es-module",

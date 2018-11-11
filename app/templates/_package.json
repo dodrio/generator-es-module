@@ -1,14 +1,8 @@
 {
   "name": "<%= moduleName %>",
-  "version": "0.0.0",
   "description": "<%= moduleDescription %>",
-  "license": "MIT",
+  "version": "0.1.0",
   "repository": "<%= githubUsername %>/<%= repoName %>",
-  "author": {
-    "name": "<%= name %>",
-    "email": "<%= email %>",
-    "url": "<%= humanizedWebsite %>"
-  },
   "engines": {
     "node": ">=8"
   },

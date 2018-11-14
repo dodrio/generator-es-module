@@ -8,11 +8,6 @@ module.exports = class extends Generator {
   constructor(...args) {
     super(...args)
 
-    this.option('org', {
-      type: String,
-      description: 'Publish to a GitHub organization account',
-    })
-
     this.option('transpile', {
       type: Boolean,
       description: 'Enable transpile',
@@ -33,21 +28,21 @@ module.exports = class extends Generator {
     return this.prompt([
       {
         name: 'moduleName',
-        message: 'Name:',
-        default: _s.slugify(this.appname),
-        filter: x => utils.slugifyPackageName(x),
+        message: 'Module Name:',
+        validate: x =>
+          x.length > 0 ? true : 'You have to provide a module name!',
       },
       {
         name: 'moduleDescription',
-        message: 'Description:',
+        message: 'Module Description:',
         default: 'A mediocre module.',
       },
       {
         name: 'githubName',
-        message: 'GitHub username:',
+        message: 'GitHub Name:',
         store: true,
-        validate: x => (x.length > 0 ? true : 'You have to provide a username'),
-        when: () => !this.options.org,
+        validate: x =>
+          x.length > 0 ? true : 'You have to provide a GitHub name!',
       },
       {
         name: 'transpile',
@@ -81,22 +76,24 @@ module.exports = class extends Generator {
             ? props[prop || option]
             : this.options[option]
 
+        const { moduleName, moduleDescription, githubName } = props
+        const repoName = utils.repoName(moduleName)
+        const camelModuleName = _s.camelize(repoName)
         const transpile = or('transpile')
         const codecov = or('codecov')
         const nyc = codecov || or('coverage', 'nyc')
-        const repoName = utils.repoName(props.moduleName)
 
         const tpl = {
-          moduleName: props.moduleName,
-          moduleDescription: props.moduleDescription,
-          camelModuleName: _s.camelize(repoName),
-          githubName: this.options.org || props.githubName,
+          moduleName,
+          camelModuleName,
+          moduleDescription,
+          githubName,
           repoName,
-          name: this.user.git.name(),
           transpile,
-          nyc,
           codecov,
+          nyc,
         }
+
         return tpl
       })
       .then(tpl => {

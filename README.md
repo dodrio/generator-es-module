@@ -35,11 +35,7 @@ There are multiple command-line options available:
 $ yo @m31271n/es-module --help
 ```
 
-## Tip
-
-Use [chalk](https://github.com/sindresorhus/chalk) if you want colors in your CLI.
-
-## Related Packages
+## Related
 
 - [@m31271n/generator-react-component](https://github.com/m31271n/generator-react-component)
 

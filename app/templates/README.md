@@ -5,7 +5,7 @@
 [![Dependency Status](https://img.shields.io/david/<%= githubName %>/<%= repoName %>.svg)](#)
 [![DevDependency Status](https://img.shields.io/david/<%= githubName %>/<%= repoName %>.svg)](#)
 [![Travis Build Status](https://img.shields.io/travis/<%= githubName %>/<%= repoName %>.svg)](#)
-[![NPM Downloads](https://img.shields.io/npm/dm/<%= repoName %>.svg)](#)
+[![NPM Downloads](https://img.shields.io/npm/dm/<%= moduleName %>.svg)](#)
 <% if (codecov) { %>[![Codecov branch](https://img.shields.io/codecov/c/github/<%= githubName %>/<%= repoName %>.svg)](#)<% } %>
 
 > <%= moduleDescription %>

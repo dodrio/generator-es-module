@@ -19,7 +19,7 @@
     "release": "npm run code-quality && npm publish"<% } %>
   },
   "files": [
-    <% if (transpile) { %>"dist/"<% } else { %>"src/"<% } %>
+    <% if (transpile) { %>"*"<% } else { %>"src/"<% } %>
   ],
   "main": <% if (transpile) { %>"index.js"<% } else { %>"src/index.js"<% } %>,
   "keywords": [

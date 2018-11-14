@@ -25,8 +25,9 @@
   "keywords": [
     ""
   ],
-  "dependencies": {<% if (!transpile) { %>
-    "esm": "^3.0.84"<% } %>
+  "dependencies": {<% if (transpile) { %>
+     "core-js": "^2.5.7"<% } else { %>
+     "esm": "^3.0.84"<% } %>
   },
   "devDependencies": {
     "ava": "1.0.0-rc.1",<% if (transpile) { %>

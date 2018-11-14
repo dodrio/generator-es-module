@@ -43,7 +43,7 @@ module.exports = class extends Generator {
         default: 'A mediocre module.',
       },
       {
-        name: 'githubUsername',
+        name: 'githubName',
         message: 'GitHub username:',
         store: true,
         validate: x => (x.length > 0 ? true : 'You have to provide a username'),
@@ -90,7 +90,7 @@ module.exports = class extends Generator {
           moduleName: props.moduleName,
           moduleDescription: props.moduleDescription,
           camelModuleName: _s.camelize(repoName),
-          githubUsername: this.options.org || props.githubUsername,
+          githubName: this.options.org || props.githubName,
           repoName,
           name: this.user.git.name(),
           transpile,

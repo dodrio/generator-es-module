@@ -2,7 +2,7 @@
   "name": "<%= moduleName %>",
   "description": "<%= moduleDescription %>",
   "version": "0.1.0",
-  "repository": "<%= githubUsername %>/<%= repoName %>",
+  "repository": "<%= githubName %>/<%= repoName %>",
   "engines": {
     "node": ">=8"
   },

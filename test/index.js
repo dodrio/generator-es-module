@@ -17,7 +17,7 @@ test.beforeEach(async () => {
 test.serial('generates expected files', async () => {
   helpers.mockPrompt(generator, {
     moduleName: 'test',
-    githubUsername: 'test',
+    githubName: 'test',
     website: 'test.com',
   })
 
@@ -44,7 +44,7 @@ test.serial('generates expected files', async () => {
 test.serial('nyc option', async () => {
   helpers.mockPrompt(generator, {
     moduleName: 'test',
-    githubUsername: 'test',
+    githubName: 'test',
     website: 'test.com',
     nyc: true,
     codecov: false,
@@ -65,7 +65,7 @@ test.serial('nyc option', async () => {
 test.serial('codecov option', async () => {
   helpers.mockPrompt(generator, {
     moduleName: 'test',
-    githubUsername: 'test',
+    githubName: 'test',
     website: 'test.com',
     nyc: true,
     codecov: true,
@@ -105,7 +105,7 @@ test.serial('prompts for description', async () => {
   helpers.mockPrompt(generator, {
     moduleName: 'test',
     moduleDescription: 'foo',
-    githubUsername: 'test',
+    githubName: 'test',
     website: 'test.com',
     nyc: true,
     codecov: true,
@@ -120,7 +120,7 @@ test.serial('prompts for description', async () => {
 test.serial('defaults to superb description', async () => {
   helpers.mockPrompt(generator, {
     moduleName: 'test',
-    githubUsername: 'test',
+    githubName: 'test',
     website: 'test.com',
     nyc: true,
     codecov: true,

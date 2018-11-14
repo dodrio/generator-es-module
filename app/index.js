@@ -113,16 +113,6 @@ module.exports = class extends Generator {
         return tpl
       })
       .then(tpl => {
-        // import generator-license
-        this.composeWith(require.resolve('generator-license'), {
-          name: tpl.name,
-          email: tpl.email,
-          website: tpl.website,
-          defaultLicense: 'MIT',
-        })
-        return tpl
-      })
-      .then(tpl => {
         const mv = (from, to) => {
           this.fs.move(this.destinationPath(from), this.destinationPath(to))
         }

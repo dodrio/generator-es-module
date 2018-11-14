@@ -1,7 +1,5 @@
 'use strict'
 
-const normalizeUrl = require('normalize-url')
-const humanizeUrl = require('humanize-url')
 const Generator = require('yeoman-generator')
 const _s = require('underscore.string')
 const utils = require('./utils')
@@ -52,14 +50,6 @@ module.exports = class extends Generator {
         when: () => !this.options.org,
       },
       {
-        name: 'website',
-        message: 'URL of your website:',
-        store: true,
-        validate: x =>
-          x.length > 0 ? true : 'You have to provide a website URL',
-        filter: x => normalizeUrl(x),
-      },
-      {
         name: 'transpile',
         message: 'Enable transpile?',
         type: 'confirm',
@@ -103,9 +93,6 @@ module.exports = class extends Generator {
           githubUsername: this.options.org || props.githubUsername,
           repoName,
           name: this.user.git.name(),
-          email: this.user.git.email(),
-          website: props.website,
-          humanizedWebsite: humanizeUrl(props.website),
           transpile,
           nyc,
           codecov,

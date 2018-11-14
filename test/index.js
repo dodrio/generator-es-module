@@ -36,7 +36,6 @@ test.serial('generates expected files', async () => {
     'test/.eslintrc.yml',
     'package.json',
     'README.md',
-    'LICENSE',
     '.npmrc',
   ])
 })

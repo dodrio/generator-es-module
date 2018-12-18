@@ -5,6 +5,8 @@ parserOptions:
   sourceType: module<% } %>
 extends:
   - eslint:recommended
+  - plugin:import/errors
+  - plugin:import/warnings
   - plugin:prettier/recommended<% if (!transpile) { %>
   - plugin:node/recommended<% } %>
 env:
@@ -15,3 +17,8 @@ rules:
   semi: off<% if (!transpile) { %>
   # disable rules conflict with eslint-plugin-node
   node/no-unsupported-features/es-syntax: off<% } %>
+settings:
+  import/resolver:
+    babel-plugin-root-import:
+      rootPathSuffix: './src'
+      rootPathPrefix: '#'

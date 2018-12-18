@@ -6,7 +6,18 @@ module.exports = function generateConfig(api) {
     ['@babel/preset-env', { useBuiltIns: 'usage', modules: false }],
   ]
 
+  const plugins = [
+    [
+      'babel-plugin-root-import',
+      {
+        rootPathSuffix: './src',
+        rootPathPrefix: '#',
+      },
+    ],
+  ]
+
   return {
     presets,
+    plugins,
   }
 }
